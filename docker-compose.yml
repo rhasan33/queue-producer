@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: bash -c 'cd code && ./manage.py runserver 0.0.0.0:8000'
+    ports:
+      - 9123:8000
+    volumes:
+      - ./code:/app/code/
+    environment:
+      - BROKER_URL=amqp://myuser:mypass@192.168.0.102:5672/myvhost
