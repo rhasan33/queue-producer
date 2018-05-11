@@ -4,7 +4,6 @@ from django.http import JsonResponse
 from kombu import Connection
 
 from .queues import order_queue, restaurant_queue
-from .tasks import hello
 from .producers import transport_task
 
 
